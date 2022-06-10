@@ -42,8 +42,13 @@ public class VendingMachineCLI {
                     String purchase = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
                     if (purchase.equals(PURCHASE_MENU_OPTION_FEED_MONEY)) {
                         double fedMoney = menu.requestMoney();
-                        money.addBalance(fedMoney);
-                        log.log("FEED MONEY:", fedMoney, money.getBalance());
+                        if (!(fedMoney < 0) && !(fedMoney % 1 == 0)) {
+                            purchasing = false;
+                            System.out.println("Please enter valid amount");
+                        } else {
+                            money.addBalance(fedMoney);
+                            log.log("FEED MONEY:", fedMoney, money.getBalance());
+                        }
                     } else if (purchase.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
                         inventory.printInventory();
                         String productCode = menu.selectProduct();
