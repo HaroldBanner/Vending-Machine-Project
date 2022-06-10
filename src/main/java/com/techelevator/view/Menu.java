@@ -56,6 +56,9 @@ public class Menu {
         out.println("How much would you like to insert?");
         out.flush();
         String userInput = in.nextLine();
+        if (Double.parseDouble(userInput) < 0 || Double.parseDouble(userInput) % 1 == 0) {
+            System.out.println("Please enter valid amount");
+        }
         double moneyInserted = Double.parseDouble(userInput);
         return moneyInserted;
     }
