@@ -2,11 +2,12 @@ package com.techelevator.view;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+
 import java.util.*;
 
 public class Inventory {
 
-    private Map<String, Product> inventory = new HashMap<>();
+    private Map<String, Product> inventory = new TreeMap<>();
 
     public Inventory() {
     }
@@ -53,7 +54,11 @@ public class Inventory {
     }
 
     public void selectProduct(String productCode, Money money, TransactionLogger log) {
-        Product product = inventory.get(productCode);
+        if (!inventory.containsKey(productCode)) {
+            System.out.println("Invalid product code");
+            return;
+        }
+            Product product = inventory.get(productCode);
         if (product.getPrice() > money.getBalance()) {
             System.out.println("Insufficient Funds");
         } else if (product.getQuantity() == 0) {

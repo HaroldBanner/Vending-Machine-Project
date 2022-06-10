@@ -13,6 +13,13 @@ public class TransactionLogger {
     private String logMessage = "%s %s $%.2f $%.2f";
 
     public TransactionLogger() {
+        if (logFile.exists()) {
+            logFile.delete();
+        }
+    }
+
+    public File getLogFile() {
+        return logFile;
     }
 
     public void log(String productName, double spent, double currentBalance) {
