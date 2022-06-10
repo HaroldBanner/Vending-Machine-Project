@@ -1,8 +1,6 @@
 package com.techelevator.view;
 
-import java.math.BigDecimal;
-
-public class Chip extends Products {
+public class Chip extends Product {
 
     public Chip(String name, double price) {
         super(name, price);

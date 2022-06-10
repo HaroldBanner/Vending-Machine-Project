@@ -50,4 +50,19 @@ public class Menu {
 		out.print(System.lineSeparator() + "Please choose an option >>> ");
 		out.flush();
 	}
+	public double requestMoney(){
+		out.println();
+		out.println("How much would you like to insert?");
+		out.flush();
+		String userInput = in.nextLine();
+		double moneyInserted = Double.parseDouble(userInput);
+		return moneyInserted;
+	}
+	public String selectProduct() {
+		out.println();
+		out.println("Please select your snack!");
+		out.flush();
+		String userInput = in.nextLine();
+		return userInput;
+	}
 }

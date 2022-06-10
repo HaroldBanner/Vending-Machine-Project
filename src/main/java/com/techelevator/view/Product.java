@@ -1,11 +1,12 @@
 package com.techelevator.view;
 
 
-public abstract class Products {
+public abstract class Product {
     private String name;
     private double price;
+    private int quantity = 5;
 
-    public Products(String name, double price) {
+    public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -18,6 +19,14 @@ public abstract class Products {
 
     public double getPrice() {
         return price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 }
 
