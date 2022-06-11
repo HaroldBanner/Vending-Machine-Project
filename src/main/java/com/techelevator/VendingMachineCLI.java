@@ -10,7 +10,8 @@ public class VendingMachineCLI {
     private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
     private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
     private static final String MAIN_MENU_OPTION_EXIT = "Exit";
-    private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT};
+    private static final String MAIN_MENU_OPTION_SALES_LOG = "Sales Log";
+    private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT, MAIN_MENU_OPTION_SALES_LOG};
     private static final String PURCHASE_MENU_OPTION_FEED_MONEY = "Feed Money";
     private static final String PURCHASE_MENU_OPTION_SELECT_PRODUCT = "Select Product";
     private static final String PURCHASE_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
@@ -55,12 +56,15 @@ public class VendingMachineCLI {
                         inventory.selectProduct(productCode, money, log);
                     } else if (purchase.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
                         purchasing = false;
+                        System.out.println("Please take your change!");
                         money.returnChange(log);
                     }
 
                 }
             } else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {
                 vending = false;
+            } else if (choice.equals(MAIN_MENU_OPTION_SALES_LOG)){
+                inventory.salesLog();
             }
         }
 

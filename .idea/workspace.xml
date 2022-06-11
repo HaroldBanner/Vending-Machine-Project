@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -35,7 +36,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../harold-banner-student-code/module-1/17_File_IO_Writing/exercise" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.techelevator.view" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.VendingMachineCLI">
     <configuration name="VendingMachineCLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -51,7 +62,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChipTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CandyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="m1-java-capstone-vending-machine" />
       <extension name="coverage">
         <pattern>
@@ -60,22 +71,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.techelevator.view" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.view.ChipTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DrinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="m1-java-capstone-vending-machine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.techelevator.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.techelevator.view" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.view.DrinkTest" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.view.CandyTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,13 +107,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TransactionLoggerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="m1-java-capstone-vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techelevator.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techelevator.view" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.view.TransactionLoggerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.VendingMachineCLI" />
+        <item itemvalue="JUnit.TransactionLoggerTest" />
+        <item itemvalue="JUnit.CandyTest" />
         <item itemvalue="JUnit.MenuTest" />
         <item itemvalue="JUnit.GumTest" />
-        <item itemvalue="JUnit.DrinkTest" />
-        <item itemvalue="JUnit.ChipTest" />
       </list>
     </recent_temporary>
   </component>
@@ -139,6 +150,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/techelevator/view/Inventory.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

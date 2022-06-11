@@ -8,8 +8,16 @@ import java.util.*;
 public class Inventory {
 
     private Map<String, Product> inventory = new TreeMap<>();
+    double totalSales;
 
     public Inventory() {
+    }
+    public void salesLog() {
+        for (Map.Entry<String, Product> sales : inventory.entrySet()){
+            System.out.println(sales.getValue().getName() + "|" + (5 - sales.getValue().getQuantity()));
+           }
+        System.out.println("");
+        System.out.println("**TOTAL SALES** $" + totalSales);
     }
 
     public Map<String, Product> getInventory() {
@@ -23,7 +31,6 @@ public class Inventory {
             String quantity = product.getQuantity() == 0 ? "SOLD OUT" : String.valueOf(product.getQuantity());
             System.out.println(code + " " + product.getName() + " $" + String.format("%.2f", product.getPrice()) + " (" + quantity + ")");
         }
-
     }
 
     public void readInventory() {
@@ -65,6 +72,7 @@ public class Inventory {
             System.out.println("SOLD OUT");
         } else {
             money.subtractBalance(product.getPrice());
+            totalSales+= product.getPrice();
             product.setQuantity(product.getQuantity() - 1);
             System.out.println(product.getName() + " $" + String.format("%.2f", product.getPrice()) + " $" + String.format("%.2f", money.getBalance()));
             System.out.println(product.getSound());
