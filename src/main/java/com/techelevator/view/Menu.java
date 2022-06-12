@@ -11,6 +11,7 @@ public class Menu {
     private Scanner in;
 
     public Menu(InputStream input, OutputStream output) {
+        // Instantiates Menu class to take user input and generate Log.txt records
         this.out = new PrintWriter(output);
         this.in = new Scanner(input);
     }
@@ -27,6 +28,7 @@ public class Menu {
     private Object getChoiceFromUserInput(Object[] options) {
         Object choice = null;
         String userInput = in.nextLine();
+        // try-catch block to ensure method accepts only valid menu options
         try {
             int selectedOption = Integer.valueOf(userInput);
             if (selectedOption > 0 && selectedOption <= options.length) {
@@ -38,11 +40,13 @@ public class Menu {
         if (choice == null) {
             out.println(System.lineSeparator() + "*** " + userInput + " is not a valid option ***" + System.lineSeparator());
         }
+        // choice variable goes into VendingMachineCLI run() method
         return choice;
     }
 
     private void displayMenuOptions(Object[] options) {
         out.println();
+        // i < 3 to stop for loop from printing hidden Sales Report option at options[3]
         for (int i = 0; i < 3; i++) {
             int optionNum = i + 1;
             out.println(optionNum + ") " + options[i]);
@@ -56,6 +60,7 @@ public class Menu {
         out.println("How many dollars would you like to insert?");
         out.flush();
         String userInput = in.nextLine();
+        // moneyInserted is tested for valid inputs in Money Class
         double moneyInserted = Double.parseDouble(userInput);
         return moneyInserted;
     }
@@ -67,9 +72,5 @@ public class Menu {
         String userInput = in.nextLine();
         return userInput;
     }
-
-    public void isProductCodeValid() {
-    }
-
 }
 
